@@ -7,6 +7,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 const pathSrc = path.resolve(__dirname, "src");
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfig => {
@@ -41,6 +42,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       Icons({
         // 自动安装图标库
         autoInstall: true,
+      }),
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+        symbolId: "icon-[dir]-[name]",
       }),
     ],
   };
