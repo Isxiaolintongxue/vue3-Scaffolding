@@ -22,7 +22,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       vue(),
       AutoImport({
-        imports: ["vue"],
+        imports: ["vue", "pinia"],
         eslintrc: {
           enabled: true,
           filepath: "./.eslintrc-auto-import.json",
