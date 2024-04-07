@@ -11,6 +11,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 const pathSrc = path.resolve(__dirname, "src");
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfig => {
+  const env = loadEnv(mode, process.cwd());
   return {
     //别名配置
     resolve: {
@@ -55,6 +56,19 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         scss: {
           javascriptEnabled: true,
           additionalData: `@use "@/styles/variables.scss" as *;`,
+        },
+      },
+    },
+    server: {
+      host: "0.0.0.0",
+      port: Number(env.Vite_App_PORT),
+      open: true,
+      proxy: {
+        [env.Vite_APP_BASE_API]: {
+          target: "http://vapi.youlai.tech",
+          changeOrigin: true,
+          rewrite: (path) =>
+            path.replace(new RegExp("^" + env.VITE_APP_BASE_API), ""),
         },
       },
     },
