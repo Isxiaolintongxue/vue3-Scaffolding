@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCounterStore } from "@/store/counter";
 const counterStore = useCounterStore();
+console.log();
 </script>
 
 <template>
