@@ -4,7 +4,7 @@ const testRoute: Array<RouteRecordRaw> = [
   {
     path: "/index",
     name: "index",
-    component: () => import("@/views/index.vue"),
+    component: () => import("@/views/watchIndex.vue"),
   },
 ];
 export default testRoute;

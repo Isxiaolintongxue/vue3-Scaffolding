@@ -1,6 +1,6 @@
 import vue from "@vitejs/plugin-vue";
 import path from "path";
-import { ConfigEnv, UserConfig, loadEnv, defineConfig } from "vite";
+import { ConfigEnv, UserConfig, loadEnv } from "vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 
