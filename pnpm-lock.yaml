@@ -23,6 +23,9 @@ dependencies:
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.3)
+  vue-router:
+    specifier: ^4.0.13
+    version: 4.0.13(vue@3.4.21)
 
 devDependencies:
   '@iconify-json/ep':
@@ -2633,6 +2636,15 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
+      vue: 3.4.21(typescript@5.4.3)
+    dev: false
+
+  /vue-router@4.0.13(vue@3.4.21):
+    resolution: {integrity: sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.1
       vue: 3.4.21(typescript@5.4.3)
     dev: false
 
