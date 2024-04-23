@@ -15,7 +15,10 @@ module.exports = {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.{js,cjs}", "*.d.ts"],
+      rules: {
+        "eslint-disable": "no-use-before-define",
+      },
       parserOptions: {
         sourceType: "script",
       },
